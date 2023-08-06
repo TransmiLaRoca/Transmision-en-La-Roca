@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Curso OBS Studio - La Roca Oficial</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    /* Estilos CSS para la página */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('fondo violeta.jpg');
+      background-size: contain;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-image 0.5s ease; /* Transición de desvanecimiento */
+    }
+    
+    main {
+      max-width: 700px;
+      margin: 10px auto;
+      padding: 0 10px;
+      background-color: rgba(150, 214, 253, 0.8);
+      border-radius: 10px;
+      display: flex;
+    }
+    
+    footer {
+      background-color: #031140;
+      height: 130px;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    h1 {
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 28px;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-right: 100px;
+    }
+
+    .video-container {
+      width: 100%;
+      padding-bottom: 5%;
+      overflow: visible;
+    }
+    
+    .video-container video {
+      width: 100%;
+      height: 70%;
+    }
+  </style>
+</head>
+<body>
+  <header id="header"></header>
+
+  <script>
+    var header = document.getElementById("header");
+    var images = ["4.png", "3.png", "2.png", "1.png"]; // Agrega aquí los nombres de tus imágenes
+    var currentIndex = 0;
+
+    function changeBackgroundImage() {
+      header.style.opacity = 0; // Oculta el header antes de cambiar la imagen
+
+      setTimeout(function() {
+        header.style.backgroundImage = "url('" + images[currentIndex] + "')";
+        currentIndex = (currentIndex + 1) % images.length;
+        header.style.opacity = 1; // Muestra el header con la nueva imagen
+      }, 0); // Espera 500ms antes de mostrar la nueva imagen (ajusta este valor según tus necesidades)
+    }
+
+    setInterval(changeBackgroundImage, 3000); // Cambia la imagen cada 3 segundos (ajusta este valor según tus necesidades)
+  </script>
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="fas fa-bars"></span>
+    </button>
+    <div class="dropdown-menu">
+    <a class="dropdown-item" href="index.html">Inicio</a>
+    <a class="dropdown-item" href="cursoOBS.html">Curso OBS Studio</a>
+    <a class="dropdown-item" href="cursoComp.html">Curso de Computación</a>
+    <a class="dropdown-item" href="tarea.html">Tarea</a>
+    <a class="dropdown-item" href="MiCuenta.html">Mi Cuenta</a>
+    </div>
+</div>
+  <main>
+    <div class="video-container">
+      <h1>Clase #1 - "Primeros Pasos"</h1>
+      <p>Bienvenidos a esta segunda clase de nuestro curso de OBS Studio.</p>
+      <p>En esta clase hablaremos de nuestros primeros pasos en el programa, conoceremos nuestra interfaz gráfica y haremos un paneo general en cada una de la partes de nuestro OBS Studio.</p>
+      <p>¡VAMOS CON EL VIDEO!</p>
+      <video controls>
+        <source src="Curso OBS - Clase 2.mp4" type="video/mp4">
+        Tu navegador no admite el elemento video.
+      </video>
+    </div>
+  </main>
+  <button type="submit" name="Registrarse" onclick="redirigir('/Clase-#0.html')">Siguiente Clase</button>
+
+
+  <footer>
+    <div class="church-info">
+      <h2>Información de la iglesia:</h2>
+      <p>Nombre: La Roca</p>
+      <p>Dirección: Quiroga 1264, Dock Sud, Argentina</p>
+    </div>
+    <div class="social-links">
+      <a href="https://www.youtube.com/larocaoficial" target="_blank">YouTube: La Roca Oficial</a>
+      <a href="https://www.instagram.com/iglesia_laroca" target="_blank">Instagram: @iglesia_laroca</a>
+      <a href="https://www.facebook.com/eduardobruno" target="_blank">Facebook: Eduardo Bruno</a>
+    </div>
+  </footer>
+
+  <script>
+    function redirigir(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
